@@ -1,7 +1,7 @@
 #!/bin/sh
 
 clear
-	echo "\n${CYAN}Download Nodejs into your Downloads Folder?${WHITE}"
+	echo "\n${CYAN}Downloading Nodejs into your Downloads Folder!${WHITE}"
 	echo "PRESS: 1 for ${GREEN}Latest_Features${WHITE} AND 2 for ${RED}Recommended${WHITE}\n"
 
 	select yn in "Latest_Features" "Recommended"; do
