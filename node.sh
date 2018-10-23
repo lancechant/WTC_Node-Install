@@ -11,7 +11,7 @@ clear
 				cd node-v10.12.0
 				./configure
 				make -j4
-				echo "export PATH=$HOME/bin:"$PWD:$PWD/deps/npm/bin:$PATH >> ~/.zshrc
+				echo "export PATH=$HOME/bin:"$PWD:$PWD/out/bin:$PWD/deps/npm/bin:$PATH >> ~/.zshrc
 				echo "alias npm='npm-cli.js'" >> ~/.zshrc
 				source ~/.zshrc
 				break;;
@@ -20,7 +20,7 @@ clear
 				cd node-v8.12.0
 				./configure
 				make -j4
-				echo "export PATH=$HOME/bin:"$PWD:$PWD/deps/npm/bin:$PATH >> ~/.zshrc
+				echo "export PATH=$HOME/bin:"$PWD:$PWD/out/bin:$PWD/deps/npm/bin:$PATH >> ~/.zshrc
 				echo "alias npm='npm-cli.js'" >> ~/.zshrc
 				break;;
 		esac
