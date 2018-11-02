@@ -14,14 +14,17 @@ clear
 				echo "export PATH=$HOME/bin:"$PWD:$PWD/out/bin:$PWD/deps/npm/bin:$PATH >> ~/.zshrc
 				echo "alias npm='npm-cli.js'" >> ~/.zshrc
 				source ~/.zshrc
+				echo "Please open a new terminal"
 				break;;
 			Recommended )
-				curl "https://nodejs.org/dist/v8.12.0/node-v8.12.0.tar.gz" | tar -xf - -C /goinfre/$USER/Downloads
+				curl "https://nodejs.org/dist/v8.12.0/node-v8.12.0.tar.gz" | tar -xf - -C /goinfre/$USER/Downloads || exit 1
 				cd /goinfre/$USER/Downloads/node-v8.12.0
 				./configure
 				make -j4
 				echo "export PATH=$HOME/bin:"$PWD:$PWD/out/bin:$PWD/deps/npm/bin:$PATH >> ~/.zshrc
 				echo "alias npm='npm-cli.js'" >> ~/.zshrc
+				source ~/.zshrc
+				echo "Please open a new terminal"
 				break;;
 		esac
 	break;
