@@ -7,24 +7,28 @@ clear
 	select yn in "Latest_Features" "Recommended"; do
 		case $yn in
 			Latest_Features )
-				curl "https://nodejs.org/dist/v11.4.0/node-v11.4.0.tar.gz" | tar -xf - -C /goinfre/$USER/Downloads || exit 1
-				cd /goinfre/$USER/Downloads/node-v11.4.0
+				curl "https://nodejs.org/en/download/current/" > test.txt
+				output=$(grep "Latest Current Version" test.txt| cut -d'>' -f3 | cut -d'<' -f1)
+				curl "https://nodejs.org/dist/v$output/node-v$output.tar.gz" | tar -xf - -C /goinfre/$USER/Downloads || exit 1
+				cd $output
 				./configure
 				make -j4
 				echo "export PATH=$HOME/bin:"$PWD:$PWD/out/bin:$PWD/deps/npm/bin:$PATH >> ~/.zshrc
 				echo "alias npm='npm-cli.js'" >> ~/.zshrc
 				source ~/.zshrc
-				echo "Please open a new terminal"
+				echo "Please open a new terminal and please refer to the README for final setup"
 				break;;
 			Recommended )
-				curl "https://nodejs.org/dist/v10.14.1/node-v10.14.1.tar.gz" | tar -xf - -C /goinfre/$USER/Downloads || exit 1
-				cd /goinfre/$USER/Downloads/node-v10.14.1
+				curl "https://nodejs.org/en/download/" > test.txt
+				output=$(grep "Latest LTS Version" test.txt| cut -d'>' -f3 | cut -d'<' -f1)
+				curl "https://nodejs.org/dist/v$output/node-v$output.tar.gz" | tar -xf - -C /goinfre/$USER/Downloads || exit 1
+				cd $output
 				./configure
 				make -j4
 				echo "export PATH=$HOME/bin:"$PWD:$PWD/out/bin:$PWD/deps/npm/bin:$PATH >> ~/.zshrc
 				echo "alias npm='npm-cli.js'" >> ~/.zshrc
 				source ~/.zshrc
-				echo "Please open a new terminal"
+				echo "Please open a new terminal and please refer to the README for final setup"
 				break;;
 		esac
 	break;
