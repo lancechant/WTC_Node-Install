@@ -10,7 +10,7 @@ clear
 				curl "https://nodejs.org/en/download/current/" > test.txt
 				output=$(grep "Latest Current Version" test.txt| cut -d'>' -f3 | cut -d'<' -f1)
 				curl "https://nodejs.org/dist/v$output/node-v$output.tar.gz" | tar -xf - -C /goinfre/$USER/Downloads || exit 1
-				cd $output
+				cd /goinfre/$USER/Downloads/node-v$output
 				./configure
 				make -j4
 				echo "export PATH=$HOME/bin:"$PWD:$PWD/out/bin:$PWD/deps/npm/bin:$PATH >> ~/.zshrc
@@ -22,7 +22,7 @@ clear
 				curl "https://nodejs.org/en/download/" > test.txt
 				output=$(grep "Latest LTS Version" test.txt| cut -d'>' -f3 | cut -d'<' -f1)
 				curl "https://nodejs.org/dist/v$output/node-v$output.tar.gz" | tar -xf - -C /goinfre/$USER/Downloads || exit 1
-				cd $output
+				cd /goinfre/$USER/Downloads/node-v$output
 				./configure
 				make -j4
 				echo "export PATH=$HOME/bin:"$PWD:$PWD/out/bin:$PWD/deps/npm/bin:$PATH >> ~/.zshrc
