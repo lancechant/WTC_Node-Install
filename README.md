@@ -6,7 +6,7 @@ This bash script allows students at WeThinkCode to be able to use NodeJS on the 
 
 ` sh -c "$(curl -fsSL https://raw.githubusercontent.com/lancechant/WTC_Node-Install/master/node.sh)"`
 <br>
-once that is complete please go to into the the node folder then deps/npm/bin/ and open the npm executable in a text editor
+once that is complete please go to into the the node folder then `deps/npm/bin/` and open the npm executable in a text editor
 
 change these 
 <br>
